@@ -17,6 +17,9 @@ importers:
       '@fontsource-variable/onest':
         specifier: 5.0.2
         version: 5.0.2
+      '@fontsource/orbitron':
+        specifier: ^5.2.8
+        version: 5.2.8
       astro:
         specifier: 4.4.5
         version: 4.4.5(typescript@5.3.3)
@@ -492,6 +495,9 @@ packages:
 
   '@fontsource-variable/onest@5.0.2':
     resolution: {integrity: sha512-XsH6q+/OyO0Oba4OB/NkiQu3ON93U2Kx+1YxKpNZMuS+a+WvxipwhO8Und2CC0mLI33xOZzTWUk4wtnsUJzjCQ==}
+
+  '@fontsource/orbitron@5.2.8':
+    resolution: {integrity: sha512-ruzrDl5vnqNykk5DZWY0Ezj4aeFZSbCnwJTc/98ojNJHSsHhlhT2r7rwQrA5sptmF8JtB8TQTAvlfRvcV28RPw==}
 
   '@isaacs/cliui@8.0.2':
     resolution: {integrity: sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==}
@@ -3207,6 +3213,8 @@ snapshots:
     optional: true
 
   '@fontsource-variable/onest@5.0.2': {}
+
+  '@fontsource/orbitron@5.2.8': {}
 
   '@isaacs/cliui@8.0.2':
     dependencies:
