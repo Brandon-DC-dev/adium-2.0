@@ -1,0 +1,32 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+import Link from "./icons/Link.astro"
+const EXPERIENCE = [
+  {
+    date: "Octubre 2023 - Octubre 2025",
+    title: "Full Stack jr",
+    company: "Grupo Lahe Meeting Experts S.A. de C.V.",
+    description:
+      "Desarrollo e implementación de sistemas CMS, POS y SaaS con PHP (MVC), Laravel y MySQL. Creación de interfaces y micrositios interactivos con React, TailwindCSS y Three.js. Desarrollo móvil con Flutter y Kotlin bajo arquitectura MVVM y Firebase. Gestión de versiones con Git/GitHub y administración de sitios WordPress con Elementor.",
+    Link: "https://grupolahe.com",
+  },
+  {
+    date: "Junio 2022 - Diciembre 2022",
+    title: "Becario Full Stack",
+    company: "SECAAC TRANSFORMA S.A. de C.V.",
+    description:
+      "Desarrollo y despliegue de landing pages con PHP, Bootstrap y JavaScript. Administración de dominios, subdominios y proyectos en CPanel. Gestión de sitios WordPress con Elementor Pro, optimizando temas, rendimiento y funcionalidad.",
+    link: "https://secaac.com/",
+  }
+]
+---
+
+<ol class="relative mt-16">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>

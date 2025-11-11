@@ -1,0 +1,44 @@
+---
+// import { onMount } from 'astro/jsx-runtime'
+---
+
+<div class="flex justify-center items-center py-10">
+  <canvas
+    id="cobe"
+    style="width: 400px; height: 400px"
+    width="800"
+    height="800"
+  ></canvas>
+</div>
+
+<script type="module">
+  import createGlobe from 'https://cdn.skypack.dev/cobe'
+
+  let phi = 0
+  const canvas = document.getElementById('cobe')
+
+  const globe = createGlobe(canvas, {
+    devicePixelRatio: 2,
+    width: 800,
+    height: 800,
+    phi: 3.78,
+    theta: 0.39,
+    dark: 1.00,
+    diffuse: 1.2,
+    scale: 1,
+    mapSamples: 16000,
+    mapBrightness: 12.0,
+    baseColor: [1, 1, 1],
+    markerColor: [1, 0.5, 1],
+    glowColor: [1, 1, 1],
+    offset: [0, 0],
+    markers: [
+      { location: [37.7595, -122.4367], size: 0.03 },
+      { location: [40.7128, -74.006], size: 0.1 },
+    ],
+    onRender: (state) => {
+      state.phi = phi
+      phi += 0.01
+    },
+  })
+</script>

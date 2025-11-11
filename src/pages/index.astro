@@ -1,0 +1,82 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import AboutMe from "@/components/AboutMe.astro";
+import Briefcase from "@/components/icons/Briefcase.astro";
+import CodeIcon from "@/components/icons/Code.astro";
+import Experience from "@/components/Experience.astro";
+import ProfileCheck from "@/components/icons/ProfileCheck.astro";
+import Tools from "@/components/icons/Tools.astro";
+import Projects from "@/components/Projects.astro";
+import SectionContainer from "@/components/SectionContainer.astro";
+import Hero from "@/components/Hero.astro";
+import TitleSection from "@/components/TitleSection.astro";
+import Habilidades from "@/components/Habilidades.astro";
+import Agendas from "@/components/Agendas.astro";
+import File from "@/components/icons/File.astro";
+import Taps from "@/components/Taps.astro";
+---
+
+<Layout
+  title="Asofarma - Sitio web oficial"
+  description="Asifarma">
+  <main class="px-4">
+    <SectionContainer class="py-16 md:py-36">
+      <Hero />
+    </SectionContainer>
+  </main>
+  <div class="space-y-24">
+
+    
+    <SectionContainer id="agendas">
+      <TitleSection>
+        <File class="size-8" />
+        Agendas
+      </TitleSection>
+      <Agendas />
+    </SectionContainer>
+
+
+    <SectionContainer id="taps">
+      <TitleSection>
+        <File class="size-8" />
+        Taps
+      </TitleSection>
+      <Taps />
+    </SectionContainer>
+
+    <!-- <SectionContainer id="experiencia">
+      <TitleSection>
+        <Briefcase class="size-8" />
+        Experiencia laboral
+      </TitleSection>
+      <Experience />
+    </SectionContainer>
+
+    
+    <SectionContainer id="proyectos">
+      <TitleSection>
+        <CodeIcon class="size-7" />
+        Proyectos
+      </TitleSection>
+      <Projects />
+    </SectionContainer>
+
+
+    <SectionContainer id="sobre-mi">
+      <TitleSection>
+        <ProfileCheck class="size-8" />
+        Sobre mí
+      </TitleSection>
+      <AboutMe />
+    </SectionContainer>
+
+
+    <SectionContainer id="habilidades">
+      <TitleSection>
+        <Tools class="size-8" />
+        Habilidades
+      </TitleSection>
+      <Habilidades />
+    </SectionContainer> -->
+  </div>
+</Layout>
