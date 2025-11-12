@@ -31,7 +31,7 @@ const PROJECTS = [
     title: "Toro Steakhouse",
     description: "Biblioteca online desarrollada en PHP con MySQL y Bootstrap.",
     maps: "https://maps.app.goo.gl/cH9xkjndNhADJq5Y8",
-    // github: "https://github.com/Brandon-DC-dev/biblioteca-virtua",
+    link: "https://github.com/Brandon-DC-dev/biblioteca-virtua",
     image: "/projects/toro.png",
     tags: [TAGS.COMIDA],
   },
@@ -137,11 +137,6 @@ const PROJECTS = [
                 <maps class="size-5" /> Code
               </LinkButton>
             )}
-            {link && (
-              <LinkButton href={link}>
-                <Link class="size-4" /> Preview
-              </LinkButton>
-            )}
           </footer>
         </div>
       </article>
@@ -150,7 +145,7 @@ const PROJECTS = [
 </div>
 
 <!-- 🔹 Script de filtrado -->
-<script>
+<!-- <script>
   document.addEventListener("DOMContentLoaded", () => {
     const tabs = document.querySelectorAll("#tabs button");
     const projects = document.querySelectorAll(".project-card");
@@ -175,7 +170,40 @@ const PROJECTS = [
       });
     });
   });
+</script> -->
+
+
+<!-- 🔹 Script de filtrado -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Casteamos tabs y projects como HTMLElement
+    const tabs = document.querySelectorAll<HTMLElement>("#tabs button");
+    const projects = document.querySelectorAll<HTMLElement>(".project-card");
+
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        tabs.forEach((t) =>
+          t.classList.remove("active-tab", "border-blue-500", "text-blue-600")
+        );
+        tab.classList.add("active-tab", "border-blue-500", "text-blue-600");
+
+        // Casteamos tab como HTMLElement para acceder a dataset
+        const selected = tab.dataset.tab;
+
+        projects.forEach((project) => {
+          // Casteamos project como HTMLElement para acceder a dataset y style
+          const tags = project.dataset.tags?.split(",") || [];
+          if (selected === "all" || tags.includes(selected!)) {
+            project.style.display = "flex";
+          } else {
+            project.style.display = "none";
+          }
+        });
+      });
+    });
+  });
 </script>
+
 
 <style>
   .active-tab {
