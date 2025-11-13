@@ -1,4 +1,4 @@
----
+<!-- ---
 // import "@fontsource-variable/onest"
 
 import Header from "../components/Header.astro"
@@ -27,7 +27,7 @@ const { description, title } = Astro.props
 </head>
 
 <body class="relative text-black">
-  <!-- 🌞 Fondo principal estilo claro futurista -->
+
   <div
     class="absolute inset-0 z-[-2] min-h-screen w-full bg-[#fefcff]"
     style="
@@ -95,4 +95,150 @@ const { description, title } = Astro.props
     }
   </style>
 </body>
+</html> -->
+
+
+
+---
+import Header from "../components/Header.astro"
+import Footer from "../components/Footer.astro"
+import { ViewTransitions } from "astro:transitions"
+import Globo from "../components/Globo.jsx"
+
+interface Props {
+  title: string
+  description: string
+}
+
+const { description, title } = Astro.props
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <ViewTransitions />
+
+    <!-- tsParticles -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js" defer></script>
+  </head>
+
+  <body class="relative text-black">
+    <!-- ✅ Fondo con blur (sin zoom, con scroll permitido) -->
+    <div
+      class="fixed inset-0 z-[-3] w-full h-full bg-cover bg-center"
+      style="
+        background-image: url('/projects/fondofuturista.png');
+        filter: blur(8px) brightness(0.6);
+        background-attachment: fixed;
+      "
+    ></div>
+
+    <!-- ✅ Partículas con fondo transparente -->
+    <div id="tsparticles" class="fixed inset-0 z-[-2] pointer-events-none"></div>
+
+    <Globo client:load />
+    <Header />
+    <slot />
+    <Footer />
+
+    <style is:global>
+      :root {
+        color-scheme: light;
+      }
+
+      html {
+        font-family: "Onest Variable", system-ui, sans-serif;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        color: rgba(17, 17, 17, 0.9);
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      canvas {
+        display: block;
+        vertical-align: bottom;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+      }
+
+      /* Header animado */
+      #header-nav {
+        animation: blur linear both 0.5s;
+        animation-timeline: scroll();
+        animation-range: 0 500px;
+      }
+
+      @keyframes blur {
+        to {
+          backdrop-filter: blur(20px);
+          border-width: 1px;
+          border-color: rgba(0, 0, 0, 0.2);
+          padding: 0.25rem 0.75rem;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          background-color: rgba(229, 229, 229, 0.8);
+          border-radius: 9999px;
+          box-shadow:
+            0px 5px 40px -10px rgba(0, 0, 0, 0.15),
+            0px 0px 0 1px rgba(255, 255, 255, 0.3);
+        }
+      }
+    </style>
+
+    <!-- Script tsParticles -->
+    <script is:inline>
+      window.addEventListener("load", () => {
+        if (window.tsParticles) {
+          window.tsParticles.load("tsparticles", {
+            fps_limit: 60,
+            interactivity: {
+              events: {
+                onhover: {
+                  enable: true,
+                  mode: "bubble",
+                  parallax: { enable: true, force: 80, smooth: 10 },
+                },
+              },
+            },
+            particles: {
+              color: { value: ["#ff0055", "#00fff9"] }, // rojo neón y azul turquesa
+              move: {
+                enable: true,
+                speed: 0.4,
+                random: true,
+                out_mode: "out",
+              },
+              number: { value: 160, density: { enable: true, value_area: 900 } },
+              opacity: {
+                value: 1,
+                random: true,
+                anim: { enable: true, speed: 1, opacity_min: 0.3, sync: false },
+              },
+              size: {
+                value: 6,
+                random: true,
+              },
+            },
+            background: { color: "transparent" },
+            retina_detect: true,
+          });
+        }
+      });
+    </script>
+  </body>
 </html>
