@@ -85,8 +85,6 @@
 //   )
 // }
 
-
-
 import { useEffect, useRef } from "react"
 import createGlobe from "cobe"
 
@@ -103,18 +101,21 @@ export default function Globo() {
       height: canvas.offsetHeight * 2,
       phi: 0,
       theta: 0.3,
-      dark: 0, // modo claro para fondo luminoso
-      diffuse: 1.1,
-      scale: 1.1,
-      mapSamples: 16000,
+      dark: 1, // Fondo oscuro
+      diffuse: 1.2, // Reflejo más brillante
       mapBrightness: 6,
-      baseColor: [0.9, 0.95, 1.0], // blanco-azulado brillante 🌐
-      markerColor: [1, 0.1, 0.3], // rojo neón intenso 🔴
-      glowColor: [0.4, 0.8, 1], // azul eléctrico 🌌
+      mapSamples: 16000,
+      baseColor: [12 / 255, 235 / 255, 255 / 255], // #0cebff
+      markerColor: [255 / 255, 8 / 255, 8 / 255], // #ff0808
+      glowColor: [255 / 255, 255 / 255, 255 / 255], // #ffffff 
+      markerSize: 0.05,
+      scale: 1.0,
       offset: [0, 0],
+      opacity: 0.9,
       markers: [
-        { location: [37.7595, -122.4367], size: 0.03 },
-        { location: [40.7128, -74.006], size: 0.1 },
+        { location: [37.7595, -122.4367], size: 0.05 },
+        { location: [40.7128, -74.006], size: 0.05 },
+        { location: [-23.5505, -46.6333], size: 0.05 },
       ],
       onRender: (state) => {
         state.phi = phi
@@ -140,6 +141,7 @@ export default function Globo() {
       width="1200"
       height="1200"
       className="fixed top-0 left-0 w-full h-full z-[-1]"
+      // style={{ background: "radial-gradient(black, #020202 80%)" }}
     />
   )
 }
