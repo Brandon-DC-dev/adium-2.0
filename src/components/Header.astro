@@ -1,4 +1,4 @@
----
+<!-- ---
 import ThemeToggle from "./ThemeToggle.astro";
 
 const navItems = [
@@ -114,3 +114,100 @@ const navItems = [
   }
 </style> 
 
+
+
+ -->
+
+
+
+
+---
+import ThemeToggle from "./ThemeToggle.astro"
+const navItems = [
+  {
+    title: "Agendas",
+    label: "agendas",
+    url: "/#agendas",
+  },
+  {
+    title: "Taps",
+    label: "taps",
+    url: "/#taps",
+  },
+];
+---
+
+<header
+  class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2"
+>
+  <nav
+    class="flex px-3 text-sm md:text-base font-medium rounded-full text-gray-700 justify-center items-center bg-white/50 backdrop-blur-md shadow-sm ring-1 ring-gray-200"
+  >
+    {
+      navItems.map((link) => (
+        <a
+          class="relative block px-2 py-2 transition hover:text-withe-600"
+          aria-label={link.label}
+          href={link.url}
+        >
+          {link.title}
+        </a>
+      ))
+    }
+  </nav>
+</header>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const sections = document.querySelectorAll("section");
+    const navItems = document.querySelectorAll("header nav a");
+
+    const callback = (entries: any[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          navItems.forEach((item) => {
+            if (item.getAttribute("aria-label") == entry.target.id) {
+              item.classList.add("text-blue-500");
+            } else {
+              item.classList.remove("text-blue-500");
+            }
+          });
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(callback, {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.3,
+    });
+
+    sections.forEach((section) => observer.observe(section));
+
+    // Limpieza al cambiar de pestaña
+    document.onvisibilitychange = () => {
+      if (document.visibilityState === "hidden") observer.disconnect();
+      else sections.forEach((section) => observer.observe(section));
+    };
+  });
+</script>
+
+<style>
+  nav {
+    animation: nav-shadow 1s linear both;
+    animation-timeline: scroll();
+    animation-range: 0 100px;
+  }
+
+  @keyframes nav-shadow {
+    0% {
+      background-color: rgba(255, 255, 255, 0);
+    }
+    to {
+      background-color: rgba(255, 255, 255, 0.5);
+      box-shadow: 0px 5px 30px -5px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(12px);
+      border-radius: 9999px;
+    }
+  }
+</style>
