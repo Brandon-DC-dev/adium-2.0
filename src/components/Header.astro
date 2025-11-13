@@ -137,12 +137,14 @@ const navItems = [
 ];
 ---
 
-<header
-  class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2"
+<header class="fixed top-0 left-0 w-full flex justify-center mt-2 z-[9999]">
+
+
+<nav
+  class="flex px-3 text-sm md:text-base font-medium rounded-full justify-center items-center 
+  bg-white/80 backdrop-blur-md shadow-sm ring-1 ring-gray-300 text-black z-50"
 >
-  <nav
-    class="flex px-3 text-sm md:text-base font-medium rounded-full text-gray-700 justify-center items-center bg-white/50 backdrop-blur-md shadow-sm ring-1 ring-gray-200"
-  >
+
     {
       navItems.map((link) => (
         <a
