@@ -1,53 +1,83 @@
 ---
-// import GitHub from "./icons/GitHub.astro";
-// import Html from "./icons/Html.astro";
-import Javascript from "./icons/Javascript.astro";
-// import Link from "./icons/Link.astro";
+import cutlery from "./icons/cutlery.astro";
 import LinkButton from "./LinkButton.astro";
-// import Php from "./icons/Php.astro";
-// import Treejs from "./icons/Treejs.astro";
-// import Bootstrap from "./icons/Bootstrap.astro";
-// import Sql from "./icons/Mysql.astro";
+import BEBIDAS from "./icons/SportsBar.astro";
+import Maps from "./icons/Maps.astro";
 
 const TAGS = {
-  COMIDA: { name: "COMIDA", class: "bg-red text-white" ,icon: Javascript,},
-//   BOOTSTRAP: {
-//     name: "Bootstrap",
-//     class: "bg-[#563d7c] text-white",
-//     icon: Bootstrap,
-//   },
-//   PHP: { name: "PHP", class: "bg-indigo-700 text-white", icon: Php },
-//   JAVASCRIPT: {
-//     name: "JavaScript",
-//     class: "bg-yellow-600 text-white",
-//     icon: Javascript,
-//   },
-//   HTML: { name: "HTML", class: "bg-red-600 text-white", icon: Html },
-//   MYSQL: { name: "MySQL", class: "bg-blue-700 text-white", icon: Sql },
+  COMIDA: { name: "COMIDA", class: "bg-[#014200] text-white", icon: cutlery },
+  BEBIDAS: { name: "BEBIDAS", class: "bg-[#420C00] text-white", icon: BEBIDAS },
 };
 
 const PROJECTS = [
   {
     title: "Toro Steakhouse",
-    description: "Biblioteca online desarrollada en PHP con MySQL y Bootstrap.",
+    description:
+      "Restaurante tipo steakhouse dentro del resort, donde se ofrecen cortes premium y ambiente sofisticado.",
     maps: "https://maps.app.goo.gl/cH9xkjndNhADJq5Y8",
     link: "https://github.com/Brandon-DC-dev/biblioteca-virtua",
     image: "/projects/toro.png",
     tags: [TAGS.COMIDA],
   },
-//   {
-//     title: "360 Grados - Visualizador 3D con Tree.js",
-//     description: "Visualizador panorámico 3D basado en Three.js y Panolens.js.",
-//     link: "https://sparkling-sunshine-da227f.netlify.app",
-//     github: "https://github.com/Brandon-DC-dev/360-grados",
-//     image: "/projects/360recorrido.webp",
-//     tags: [TAGS.TORO],
-//   },
-  // 👉 aquí puedes agregar más proyectos sin problema
+  {
+    title: "Jigger + Shaker (Bebidas dentro del resort)",
+    description:
+      "Bar de cócteles premium en el resort, con mezclas de especias locales, buenos tragos y ambiente animado.",
+    maps: "https://hotel.hardrock.com/riviera-maya/es/files/6192/Mapa-Resort-Hard-Rock-Hotel-Riviera-Maya.pdf",
+    image: "/projects/Jigger_Shaker.png",
+    tags: [TAGS.BEBIDAS],
+  },
+  {
+    title: "The Market",
+    description:
+      "Disfruta ingredientes frescos y exóticos de todo el mundo en un buffet de desayuno y una cena temática por la noche.",
+    maps: "https://hotel.hardrock.com/riviera-maya/es/files/6192/Mapa-Resort-Hard-Rock-Hotel-Riviera-Maya.pdf",
+    image: "/projects/themarket.png",
+    tags: [TAGS.COMIDA],
+  },
+  {
+    title: "Faro Mercado Gastronómico",
+    description:
+      "Faro es un mercado gastronómico, un paraíso culinario que ofrece una variedad de deliciosas opciones para el desayuno y la comida.",
+    maps: "https://hotel.hardrock.com/riviera-maya/es/files/6192/Mapa-Resort-Hard-Rock-Hotel-Riviera-Maya.pdf",
+    image: "/projects/restaurante2.png",
+    tags: [TAGS.COMIDA],
+  },
+  {
+    title: "Los Gallos",
+    description:
+      "Los Gallos ofrece el delicioso sabor de la taquería mexicana en un ambiente casual. Nuestro menú es elaborado con ingredientes frescos y de alta calidad para todos los paladares. ",
+    maps: "https://hotel.hardrock.com/riviera-maya/es/files/6192/Mapa-Resort-Hard-Rock-Hotel-Riviera-Maya.pdf",
+    image: "/projects/losgallos.png",
+    tags: [TAGS.COMIDA],
+  },
+  {
+    title: "Pizzeto",
+    description:
+      "Descubre una explosión de sabor con pizzas al horno, ensaladas, sopas y pastas a la carta.",
+    maps: "https://hotel.hardrock.com/riviera-maya/es/files/6192/Mapa-Resort-Hard-Rock-Hotel-Riviera-Maya.pdf",
+    image: "/projects/pizzeto.png",
+    tags: [TAGS.COMIDA],
+  },
+  {
+    title: "Frida",
+    description:
+      "Saborea la atmósfera festiva de México y sus platillos típicos. Cena cocina mexicana y especialidades regionales a la carta.",
+    maps: "https://hotel.hardrock.com/riviera-maya/es/files/6192/Mapa-Resort-Hard-Rock-Hotel-Riviera-Maya.pdf",
+    image: "/projects/frida.png",
+    tags: [TAGS.COMIDA],
+  },
+  {
+    title: "Zen",
+    description:
+      "Desde sushi hasta tepanyakis, Zen ofrece lo mejor en cocina asiática con platillos a la carta. ",
+    maps: "https://hotel.hardrock.com/riviera-maya/es/files/6192/Mapa-Resort-Hard-Rock-Hotel-Riviera-Maya.pdf",
+    image: "/projects/zen.png",
+    tags: [TAGS.COMIDA],
+  },
 ];
 ---
 
-<!-- 🔹 Tabs -->
 <div
   class="sticky top-20 z-40 bg-white/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700 py-3"
 >
@@ -63,16 +93,40 @@ const PROJECTS = [
         TODOS
       </button>
     </li>
-    <li><button data-tab="COMIDA" class="p-3 border-b-2 border-transparent hover:border-gray-300">RESTAURANTE Y BAR</button></li>
-    <li><button data-tab="JavaScript" class="p-3 border-b-2 border-transparent hover:border-gray-300">FARMACIAS</button></li>
-    <li><button data-tab="HTML" class="p-3 border-b-2 border-transparent hover:border-gray-300">SUPER MERCADOS</button></li>
-    <li><button data-tab="Tree.js" class="p-3 border-b-2 border-transparent hover:border-gray-300">PLAZAS COMERCIALES</button></li>
-    <li><button data-tab="MySQL" class="p-3 border-b-2 border-transparent hover:border-gray-300">TOURS</button></li>
+    <li>
+      <button
+        data-tab="COMIDA,BEBIDAS"
+        class="p-3 border-b-2 border-transparent hover:border-gray-300"
+        >RESTAURANTE Y BAR</button>
+    </li>
+    <li>
+      <button
+        data-tab="cutlery,Bar"
+        class="p-3 border-b-2 border-transparent hover:border-gray-300"
+        >FARMACIAS</button>
+    </li>
+    <li>
+      <button
+        data-tab="HTML"
+        class="p-3 border-b-2 border-transparent hover:border-gray-300"
+        >SUPER MERCADOS</button>
+    </li>
+    <li>
+      <button
+        data-tab="Tree.js"
+        class="p-3 border-b-2 border-transparent hover:border-gray-300"
+        >PLAZAS COMERCIALES</button>
+    </li>
+    <li>
+      <button
+        data-tab="MySQL"
+        class="p-3 border-b-2 border-transparent hover:border-gray-300"
+        >TOURS</button>
+    </li>
   </ul>
 </div>
 
 
-<!-- 🔹 Grid de proyectos -->
 <div
   id="projects-container"
   class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
@@ -114,7 +168,7 @@ const PROJECTS = [
           <footer class="flex items-center justify-start mt-4 gap-x-4">
             {maps && (
               <LinkButton href={maps}>
-                <maps class="size-5" /> Mapa
+                <Maps class="size-5" /> Mapa
               </LinkButton>
             )}
           </footer>
@@ -124,41 +178,11 @@ const PROJECTS = [
   }
 </div>
 
-<!-- 🔹 Script de filtrado -->
-<!-- <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const tabs = document.querySelectorAll("#tabs button");
-    const projects = document.querySelectorAll(".project-card");
 
-    tabs.forEach((tab) => {
-      tab.addEventListener("click", () => {
-        tabs.forEach((t) =>
-          t.classList.remove("active-tab", "border-blue-500", "text-blue-600")
-        );
-        tab.classList.add("active-tab", "border-blue-500", "text-blue-600");
-
-        const selected = tab.dataset.tab;
-
-        projects.forEach((project) => {
-          const tags = project.dataset.tags.split(",");
-          if (selected === "all" || tags.includes(selected)) {
-            project.style.display = "flex";
-          } else {
-            project.style.display = "none";
-          }
-        });
-      });
-    });
-  });
-</script> -->
-
-
-<!-- 🔹 Script de filtrado -->
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    // Casteamos tabs y projects como HTMLElement
-    const tabs = document.querySelectorAll<HTMLElement>("#tabs button");
-    const projects = document.querySelectorAll<HTMLElement>(".project-card");
+    const tabs = document.querySelectorAll<HTMLButtonElement>("#tabs button");
+    const projects = document.querySelectorAll<HTMLDivElement>(".project-card");
 
     tabs.forEach((tab) => {
       tab.addEventListener("click", () => {
@@ -167,17 +191,18 @@ const PROJECTS = [
         );
         tab.classList.add("active-tab", "border-blue-500", "text-blue-600");
 
-        // Casteamos tab como HTMLElement para acceder a dataset
-        const selected = tab.dataset.tab;
+        const selected = tab.dataset.tab!.split(",");
 
         projects.forEach((project) => {
-          // Casteamos project como HTMLElement para acceder a dataset y style
-          const tags = project.dataset.tags?.split(",") || [];
-          if (selected === "all" || tags.includes(selected!)) {
+          const tags = project.dataset.tags!.split(",");
+
+          if (selected.includes("all")) {
             project.style.display = "flex";
-          } else {
-            project.style.display = "none";
+            return;
           }
+
+          const matches = selected.some((s) => tags.includes(s));
+          project.style.display = matches ? "flex" : "none";
         });
       });
     });
@@ -185,9 +210,10 @@ const PROJECTS = [
 </script>
 
 
+
 <style>
   .active-tab {
-    border-color: rgb(59 130 246); /* blue-500 */
+    border-color: rgb(59 130 246);
     color: rgb(37 99 235);
   }
 </style>

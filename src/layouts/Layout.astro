@@ -273,7 +273,24 @@ const { description, title } = Astro.props
       });
     </script>
   </body>
-</html> -->
+</html> 
+
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
 
 ---
 import "@fontsource-variable/onest";
@@ -287,9 +304,8 @@ import Footer from "../components/Footer.astro";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>Vanta Globe</title>
+    <title>Adium</title>
 
-    <!-- Scripts necesarios -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js" defer></script>
 
@@ -306,21 +322,17 @@ import Footer from "../components/Footer.astro";
 
     <ViewTransitions />
 
-    <!-- FONDO ANIMADO -->
     <div id="vanta-bg" class="fixed inset-0 -z-10"></div>
 
-    <!-- HEADER -->
     <Header />
 
-    <!-- CONTENIDO -->
     <main class="relative z-20 pt-24">
       <slot />
     </main>
 
-    <!-- FOOTER (AQUÍ DEBE IR) -->
     <Footer />
 
-    <!-- Inicialización de VANTA -->
+    
     <script is:inline>
       window.addEventListener("load", () => {
         const tryInitVanta = () => {
@@ -349,4 +361,4 @@ import Footer from "../components/Footer.astro";
     </script>
 
   </body>
-</html>
+</html> 
