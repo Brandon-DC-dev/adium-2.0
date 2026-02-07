@@ -3,10 +3,18 @@ import cutlery from "./icons/cutlery.astro";
 import LinkButton from "./LinkButton.astro";
 import BEBIDAS from "./icons/SportsBar.astro";
 import Maps from "./icons/Maps.astro";
+import Pharmacy from "./icons/Pharmacy.astro";
+import ShoppingCart from "./icons/ShoppingCart.astro";
+import StoreMall from "./icons/StoreMall.astro";
+import Tour from "./icons/Tour.astro";
 
 const TAGS = {
   COMIDA: { name: "COMIDA", class: "bg-[#014200] text-white", icon: cutlery },
   BEBIDAS: { name: "BEBIDAS", class: "bg-[#420C00] text-white", icon: BEBIDAS },
+  FARMACIAS: { name: "FARMACIAS", class: "bg-[#0D47A1] text-white", icon: Pharmacy },
+  SUPERMERCADOS: { name: "SUPERMERCADOS", class: "bg-[#E65100] text-white", icon: ShoppingCart },
+  PLAZAS: { name: "PLAZAS", class: "bg-[#4A148C] text-white", icon: StoreMall },
+  TOURS: { name: "TOURS", class: "bg-[#00695C] text-white", icon: Tour },
 };
 
 const PROJECTS = [
@@ -75,6 +83,122 @@ const PROJECTS = [
     image: "/projects/zen.png",
     tags: [TAGS.COMIDA],
   },
+  // Farmacias
+  {
+    title: "Farmacia del Ahorro",
+    description:
+      "Cadena de farmacias con precios accesibles. Medicamentos genéricos, productos de cuidado personal y servicio en Riviera Maya y Cancún.",
+    maps: "https://www.google.com/maps/search/farmacia+del+ahorro+cancun",
+    image: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=600&q=80",
+    tags: [TAGS.FARMACIAS],
+  },
+  {
+    title: "Farmacias Similares",
+    description:
+      "Farmacias con medicamentos genéricos a bajo costo. Consultorio médico adjunto y amplio surtido en la zona de Cancún.",
+    maps: "https://www.google.com/maps/search/farmacias+similares+cancun",
+    image: "https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=600&q=80",
+    tags: [TAGS.FARMACIAS],
+  },
+  {
+    title: "Farmacia Guadalajara",
+    description:
+      "Farmacia de cadena con presencia en Cancún. Medicamentos, perfumería y conveniencia cerca de hoteles y plazas.",
+    maps: "https://www.google.com/maps/search/farmacia+guadalajara+cancun",
+    image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&q=80",
+    tags: [TAGS.FARMACIAS],
+  },
+  // Supermercados
+  {
+    title: "Chedraui",
+    description:
+      "Supermercado completo en Cancún y Riviera Maya. Despensa, electrónica, ropa y artículos para el hogar a buenos precios.",
+    maps: "https://www.google.com/maps/search/chedraui+cancun",
+    image: "https://static.wixstatic.com/media/3566ca_bd611451c1d84b47be35f9b3eb54efce~mv2_d_4634_2666_s_4_2.jpg/v1/fill/w_560,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/3566ca_bd611451c1d84b47be35f9b3eb54efce~mv2_d_4634_2666_s_4_2.jpg",
+    tags: [TAGS.SUPERMERCADOS],
+  },
+  {
+    title: "Walmart Cancún",
+    description:
+      "Hipermercado Walmart en la zona hotelera y en la ciudad. Todo para tu despensa, playa y souvenirs.",
+    maps: "https://www.google.com/maps/search/walmart+cancun",
+    image: "https://cancuntriptips.com/wp-content/uploads/2018/09/walmart-em-cancun.jpg",
+    tags: [TAGS.SUPERMERCADOS],
+  },
+  {
+    title: "Soriana",
+    description:
+      "Cadena de supermercados en Cancún. Despensa, frescos, bebidas y productos de limpieza para tu estancia.",
+    maps: "https://www.google.com/maps/search/soriana+cancun",
+    image: "https://eldespertador.com.mx/wp-content/uploads/2024/12/breves-soriana-scaled.webp",
+    tags: [TAGS.SUPERMERCADOS],
+  },
+  // Plazas comerciales
+  {
+    title: "La Isla Shopping Village",
+    description:
+      "Plaza comercial en la zona hotelera de Cancún con tiendas, restaurantes, cine y vista a la laguna. Ideal para compras y paseo.",
+    maps: "https://www.google.com/maps/search/la+isla+cancun",
+    image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1d/10/60/ac/seccion-entertaiment.jpg?w=900&h=500&s=1",
+    tags: [TAGS.PLAZAS],
+  },
+  {
+    title: "Plaza Kukulkán",
+    description:
+      "Centro comercial en el Blvd. Kukulkán con marcas internacionales, restaurantes, bares y entretenimiento frente al mar.",
+    maps: "https://www.google.com/maps/search/plaza+kukulkan+cancun",
+    image: "https://www.frel.mx/images/projects/kukulcan-plaza/01.jpg",
+    tags: [TAGS.PLAZAS],
+  },
+  {
+    title: "Plaza Las Américas",
+    description:
+      "Plaza comercial en Cancún con tiendas departamentales, cine, zona de comida y servicios. Muy visitada por locales y turistas.",
+    maps: "https://www.google.com/maps/search/plaza+las+americas+cancun",
+    image: "https://www.revistaequipar.com/admin/img/secciones/CCPzaLasAmericas-01.jpg",
+    tags: [TAGS.PLAZAS],
+  },
+  // Tours Cancún
+  {
+    title: "Xcaret",
+    description:
+      "Parque ecoarqueológico en Riviera Maya. Ríos subterráneos, playa, espectáculos, acuario y cultura mexicana. Uno de los tours más famosos.",
+    maps: "https://www.google.com/maps/search/xcaret+park",
+    image: "https://www.govisitcancun.com/images/parks/xcaretaereal.jpg",
+    tags: [TAGS.TOURS],
+  },
+  {
+    title: "Xel-Há",
+    description:
+      "Parque natural con caleta, snorkel, río flotante y tirolesas. Todo incluido en comida y bebidas. Cerca de Tulum y Cancún.",
+    maps: "https://www.google.com/maps/search/xel-ha",
+    image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/df/c5/09/xel-ha-park.jpg?w=900&h=500&s=1",
+    tags: [TAGS.TOURS],
+  },
+  {
+    title: "Chichén Itzá",
+    description:
+      "Tour a la zona arqueológica maya, una de las Nuevas Maravillas del Mundo. Incluye cenote y comida típica. Salidas desde Cancún.",
+    maps: "https://www.google.com/maps/search/chichen+itza",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_2TLRDmtRHY_5Zway-PSbLYG8FIQyK9O5zg&s",
+    tags: [TAGS.TOURS],
+  },
+  {
+    title: "Tulum",
+    description:
+      "Ruinas mayas frente al Caribe. Tour combinado con playa, cenotes o Cobá. Muy recomendado desde Cancún y Riviera Maya.",
+    maps: "https://www.google.com/maps/search/tulum+ruinas",
+    image: "https://www.vivaplaya.net/viva/wp-content/uploads/2019/05/aeropuerto-cancun-a-tulum-viva-playa.jpg",
+    tags: [TAGS.TOURS],
+  },
+  {
+    title: "Isla Mujeres",
+    description:
+      "Tour en ferry a Isla Mujeres. Playa Norte, golf cart, snorkel con tortugas y ambiente relajado. Medio día o día completo.",
+    maps: "https://www.google.com/maps/search/isla+mujeres",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYMbYk7CzcAJWrzGRdApz1sGbNyak8KyvF6A&s",
+    tags: [TAGS.TOURS],
+  },
 ];
 ---
 
@@ -101,25 +225,25 @@ const PROJECTS = [
     </li>
     <li>
       <button
-        data-tab="cutlery,Bar"
+        data-tab="FARMACIAS"
         class="p-3 border-b-2 border-transparent hover:border-gray-300"
         >FARMACIAS</button>
     </li>
     <li>
       <button
-        data-tab="HTML"
+        data-tab="SUPERMERCADOS"
         class="p-3 border-b-2 border-transparent hover:border-gray-300"
-        >SUPER MERCADOS</button>
+        >SUPERMERCADOS</button>
     </li>
     <li>
       <button
-        data-tab="Tree.js"
+        data-tab="PLAZAS"
         class="p-3 border-b-2 border-transparent hover:border-gray-300"
         >PLAZAS COMERCIALES</button>
     </li>
     <li>
       <button
-        data-tab="MySQL"
+        data-tab="TOURS"
         class="p-3 border-b-2 border-transparent hover:border-gray-300"
         >TOURS</button>
     </li>
